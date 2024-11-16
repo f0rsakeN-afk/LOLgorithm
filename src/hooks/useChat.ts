@@ -18,11 +18,7 @@ export const useChat = () => {
       const userMessage = createMessage(content, "user");
       setMessages((prev) => [...prev, userMessage]);
       try {
-        return await chatApi.sendMessage(content, messages, {
-          maxRetries: 3,
-          baseDelay: 1000,
-          maxDelay: 10000,
-        });
+        return await chatApi.sendMessage(content, messages);
       } catch (error) {
         // Remove the user message if the request completely fails
         setMessages((prev) => prev.filter((msg) => msg.id !== userMessage.id));
@@ -34,7 +30,7 @@ export const useChat = () => {
       setMessages((prev) => [...prev, aiMessage]);
     },
     onError: (error) => {
-      console.log(error);
+      console.error("Chat Error:", error);
     },
   });
 
