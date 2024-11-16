@@ -1,17 +1,24 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import Layout from './pages/Layout';
 import { ThemeProvider } from './providers/theme-provider';
+import Layout from './pages/Layout';
+import Home from './pages/Home';
+import Chat from './components/Chat';
 
 const App = () => {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: Infinity,
+        refetchOnWindowFocus: false
+      }
+    }
+  });
   return <>
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme='system' storageKey='lolgorithm-theme'>
-
         <Layout>
-          k xa kta kti ho
-
+          <Chat />
         </Layout>
       </ThemeProvider>
       <ReactQueryDevtools initialIsOpen={false} />

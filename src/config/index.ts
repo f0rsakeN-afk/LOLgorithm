@@ -1,0 +1,10 @@
+export const CHAT_CONFIG = {
+  MAX_MESSAGE_LENGTH: 4000,
+  MAX_CONTEXT_MESSAGES: 5,
+  RETRY_COUNT: 3,
+  RETRY_DELAY: 1000,
+  RATE_LIMIT: {
+    MAX_REQUESTS: 10,
+    TIME_WINDOW: 60000, // 1 minute
+  },
+} as const;

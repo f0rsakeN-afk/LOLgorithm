@@ -5,6 +5,7 @@ import { useTheme } from '@/providers/theme-provider';
 
 const Header: React.FC = () => {
   const { theme, setTheme } = useTheme();
+
   return (
     <header className="fixed top-0 left-0 right-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
       <div className="container mx-auto max-w-4xl flex h-14 items-center justify-between px-4">
