@@ -12,9 +12,9 @@ const Chat: React.FC = () => {
     return (
 
         <>
-            {messages.length === 0 && <Welcome />}
-            <Card className='mt-4 flex flex-col h-[calc(100vh-5rem)]'>
+            <Card className='mt-4 flex flex-col justify-end h-[calc(100vh-5rem)]'>
                 <ScrollArea>
+                    {messages.length === 0 && <Welcome />}
                     <div className="space-y-4 p-4">
                         {messages.map((message) => (
                             <ChatMessage key={message.id} message={message} />
