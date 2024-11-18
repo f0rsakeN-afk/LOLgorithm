@@ -107,10 +107,6 @@ The application uses Google's Gemini AI API for chat functionality. API calls ar
 - Error handling
 - Request caching
 
-
-## Demo
-![LOLgorithm Chat](./src/assets/demo.mkv)
-
 ## 🤝 Contributing
 
 1. Fork the repository
